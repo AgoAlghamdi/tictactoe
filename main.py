@@ -18,11 +18,11 @@ def cpu(pos):
 def win_condition(pos):
     values=set(pos.values())
     if (pos[1]=='X' and pos[2]=='X' and pos[3]=='X') or (pos[1]=='X' and pos[4]=='X' and pos[7]=='X')or (pos[2]=='X' and pos[5]=='X' and pos[8]=='X')or (pos[3]=='X' and pos[5]=='X' and pos[7]=='X')or (pos[4]=='X' and pos[5]=='X'and pos[6]=='X') or (pos[7]=='X' and pos[8]=='X' and pos[9]=='X') or (pos[1]=='X' and pos[5]=='X'and pos[9]=='X') or (pos[3]=='X' and pos[6]=='X'and pos[9]=='X') :
-        return print('you Win!')
+        return print('You Win!')
     elif (pos[1]=='O' and pos[2]=='O' and pos[3]=='O') or (pos[1]=='O' and pos[4]=='O' and pos[7]=='O')or (pos[2]=='O' and pos[5]=='O' and pos[8]=='O')or (pos[3]=='O' and pos[5]=='O' and pos[7]=='O')or (pos[4]=='O' and pos[5]=='O'and pos[6]=='O') or (pos[7]=='O' and pos[8]=='O' and pos[9]=='O') or (pos[1]=='O' and pos[5]=='O'and pos[9]=='O')or (pos[3]=='O' and pos[6]=='O'and pos[9]=='O') :
-        return print('you Lose!')
+        return print('You Lose!')
     elif values=={'X','O'} or values=={'O','X'}:
-        return print('tie!')
+        return print('Tie!')
 
 
     return True    
@@ -56,7 +56,6 @@ def main():
         advanced_cpu(pos) #hard mode
         #cpu(pos) #easy mode
         draw(pos)
-        print(set(pos.values()))
 
 
 if __name__=='__main__':

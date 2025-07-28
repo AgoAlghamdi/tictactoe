@@ -2,7 +2,7 @@ import random
 def advanced_cpu(pos):
     values=set(pos.values())
     if values=={'X','O'} or values=={'O','X'}:
-        return print('tie')
+        return None
     elif (pos[2]=='X' and pos[3]=='X' and pos[1]=='1'):
         return pos.update({1:'O'})
     elif (pos[1]=='X' and pos[3]=='X' and pos[2]=='2'):
