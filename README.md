@@ -1,4 +1,4 @@
-#ReadMe
+# ReadMe
 
 simple TicTacToe game, choose the positon using one of the shown number
 
