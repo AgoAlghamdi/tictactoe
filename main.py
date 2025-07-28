@@ -1,8 +1,9 @@
 import random
-from advanced_cpu import advance_cpu
+from advanced_cpu import advanced_cpu
 
 
 pos={1:'1', 2:'2', 3:'3',4:'4',5:'5', 6:'6',7:'7',8:'8',9:'9'}
+lis_numbr=['1','2','3','4','5','6','7','8','9']
 
 
 def cpu(pos):
@@ -15,14 +16,14 @@ def cpu(pos):
 
         
 def win_condition(pos):
-    values=list(pos.values())
+    values=set(pos.values())
     if (pos[1]=='X' and pos[2]=='X' and pos[3]=='X') or (pos[1]=='X' and pos[4]=='X' and pos[7]=='X')or (pos[2]=='X' and pos[5]=='X' and pos[8]=='X')or (pos[3]=='X' and pos[5]=='X' and pos[7]=='X')or (pos[4]=='X' and pos[5]=='X'and pos[6]=='X') or (pos[7]=='X' and pos[8]=='X' and pos[9]=='X') or (pos[1]=='X' and pos[5]=='X'and pos[9]=='X') or (pos[3]=='X' and pos[6]=='X'and pos[9]=='X') :
         return print('you Win!')
     elif (pos[1]=='O' and pos[2]=='O' and pos[3]=='O') or (pos[1]=='O' and pos[4]=='O' and pos[7]=='O')or (pos[2]=='O' and pos[5]=='O' and pos[8]=='O')or (pos[3]=='O' and pos[5]=='O' and pos[7]=='O')or (pos[4]=='O' and pos[5]=='O'and pos[6]=='O') or (pos[7]=='O' and pos[8]=='O' and pos[9]=='O') or (pos[1]=='O' and pos[5]=='O'and pos[9]=='O')or (pos[3]=='O' and pos[6]=='O'and pos[9]=='O') :
         return print('you Lose!')
-    
-    elif (values.count('O')>=4) and (values.count('X')>=4):
-        return print('Tie')
+    elif values=={'X','O'} or values=={'O','X'}:
+        return print('tie!')
+
 
     return True    
     
@@ -52,9 +53,10 @@ def main():
 
         pos.update({user_input():'X'})
         
-        advance_cpu(pos) #hard mode
+        advanced_cpu(pos) #hard mode
         #cpu(pos) #easy mode
         draw(pos)
+        print(set(pos.values()))
 
 
 if __name__=='__main__':

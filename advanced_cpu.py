@@ -1,6 +1,9 @@
 import random
-def advance_cpu(pos):
-    if (pos[2]=='X' and pos[3]=='X' and pos[1]=='1'):
+def advanced_cpu(pos):
+    values=set(pos.values())
+    if values=={'X','O'} or values=={'O','X'}:
+        return print('tie')
+    elif (pos[2]=='X' and pos[3]=='X' and pos[1]=='1'):
         return pos.update({1:'O'})
     elif (pos[1]=='X' and pos[3]=='X' and pos[2]=='2'):
         return pos.update({2:'O'})
@@ -50,6 +53,6 @@ def advance_cpu(pos):
         return pos.update({7:'O'})
     else:
         choice=random.randrange(1,9)
-        if (pos[choice]=='X') or (pos[choice]=='O'):
-            return advance_cpu(pos)
+        if(pos[choice]=='X') or (pos[choice]=='O'):
+            return advanced_cpu(pos)
         return pos.update({choice:'O'})
